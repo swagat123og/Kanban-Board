@@ -12,7 +12,8 @@
   --secondary-text-color:gray;
   --third-text-color: #fff;
   --primary-blue-color: #4F46E5;
-  --destructive-red-color: #DC2626;
+  --destructive-red-color: #fc0707;
+  --background-red:#DC2626;
   --card: #FFFFFF;
   --card-foreground: #0F0F1A;
   --primary-foreground: #FFFFFF;
@@ -28,8 +29,9 @@
   --accent: #EAEAF4;
   --accent-foreground: #0F0F1A;
   --destructive-foreground: #FFFFFF;
-  --ring: #4F46E5;
-  --chart-1: oklch(0.646 0.222 41.116);
+  --ring: #6a63f82e;
+  --button2:#4F46E5;
+  --chart-1: oklch(66.316% 0.21802 37.439);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
@@ -53,7 +55,7 @@ html,body{
     background-color: var(--secondary);
 }
 
-
+/* from this Navbar work is done (only for website part)*/
 nav{
   display: flex;
   justify-content: space-between;
@@ -181,12 +183,9 @@ nav{
 }
 
 
-/* from this Navbar work is done (only for website part)*/
 
 
-
-
-/* now the main part */
+/* now the main part starts but the screens */
 
 section{
     display: flex;
@@ -203,15 +202,40 @@ section{
     background-color: var(--background);
     box-shadow: 0 1px 3px rgba(15,23,42,.06);
     outline: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .left_main_div_top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 9px;
     border-bottom:1px solid var(--sidebar-border);
     box-shadow: none;
+    padding: 15px;
+}
+
+.left_main_div_bottom{
+    padding: 2px 14px 12px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.left_main_div_bottom::-webkit-scrollbar{
+    width: 0;
+}
+
+/* Visible on hover */
+
+.left_main_div_bottom::-webkit-scrollbar-thumb{
+    background: #cfcfcf;
+    border-radius: 5px;
+}
+
+.left_main_div_bottom::-webkit-scrollbar-track{
+    background: transparent;
 }
 
 .left_main_div_top_left{
@@ -340,4 +364,167 @@ section{
     font-size: 15px;
     font-weight: 500;
     color: var(--primary-text-color);
+}
+
+
+
+/* Now Card design starts */
+.card{
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: var(--card);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+}
+.card:active{
+    cursor: grabbing;
+    opacity: 1;
+}
+
+.card:hover{
+    cursor: grab;
+}
+
+
+
+
+/* card bottom is done here */
+.card_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top:1px solid var(--sidebar-border);
+    padding: 5px 18px 10px;
+    background-color: var(--sidebar);
+    
+}
+
+.card_bottom button{
+    padding: 5px 10px 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: none;
+    background-color: var(--accent);
+    color: var(--primary-blue-color);
+    font-weight: 550;
+    margin-top: 5px;
+}
+
+.bottom_arrow{
+    font-size: 14px;
+}
+
+.card_circle_bottom{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--background);
+    border:1px solid var(--sidebar-border);
+    margin-left: 5px;
+    margin-top: 5px;
+    
+}
+
+.left_card_bottom{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 6px;
+    
+}
+
+.card_bottom_1{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+font-weight: 100;
+color: var(--secondary-text-color);
+margin-right: 5px;
+font-size: 17px;
+}
+
+.card_bottom_2{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 5px;
+ font-weight: 100;
+ font-size: 17px;
+ color: var(--secondary-text-color); 
+ margin-right: 5px;  
+}
+
+.right_card_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 5px;
+}
+
+
+/* card top starts here */
+
+.card_top{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 16px 0 18px;
+}
+
+.card_top p{
+    font-size: 13px;
+    color: var(--secondary-text-color);
+    font-weight: 200;
+
+}
+
+.card_top h3{
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.card_button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 8px 0;
+}
+.card_button button{
+    padding: 4px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card_date{
+    display: flex;
+    align-items: center;
+    gap:8px;    
+}
+.card_date h3{
+    font-size: 14px;
+    padding-top: 5px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+.calender{
+    padding-bottom: 12px;
+    color: var(--secondary-text-color);
+}
+
+.bottom_1{
+    color: var(--chart-1);
+    border:1px solid var(--destructive-red-color);
+    background-color: rgba(255, 0, 0, 0.037);
+}
+
+.bottom_2{
+    color: var(--primary-blue-color);
+    border:none;
+    background-color: var(--ring);
 }
